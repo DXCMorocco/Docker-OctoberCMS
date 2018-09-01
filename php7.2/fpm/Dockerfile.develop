@@ -36,7 +36,7 @@ ENV OCTOBERCMS_TAG develop
 ENV OCTOBERCMS_DEVELOP_CHECKSUM 53806130ca6c29409bf8f89298480421ba2398fe
 ENV OCTOBERCMS_DEVELOP_COMMIT 52d1388e4e7d7165695af889f8dcc861086ad012
 
-RUN git clone https://github.dxc.com/DXCMorocco/OctoberCMS.git -b $OCTOBERCMS_TAG . && \
+RUN git clone https://melyazidi:b730674148c58dd44da6d31a9a28ea7fd65a5e8c@github.dxc.com/DXCMorocco/OctoberCMS.git . && \
   composer install --no-interaction --prefer-dist --no-scripts && \
   composer clearcache && \
   git status && git reset --hard HEAD && \
