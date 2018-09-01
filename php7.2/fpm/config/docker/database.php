@@ -14,8 +14,8 @@ return [
             'database' => env('DB_PATH_SQLITE','storage/database.sqlite'),
         ],
         'mysql' => [
-            'host'      => env('DB_HOST','mysql'),
-            'port'      => env('DB_PORT', '191.237.232.75'),
+            'host'      => env('DB_HOST','191.237.232.75'),
+            'port'      => env('DB_PORT', '3306'),
             'database'  => env('DB_DATABASE', 'mysqldatabase36859'),
             'username'  => env('DB_USERNAME', 'mysqldxcuser@dxcmorocco-mysqldbserver'),
             'password'  => env('DB_PASSWORD', 'DXC_Morocco_2018'),
