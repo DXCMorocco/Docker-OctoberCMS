@@ -37,7 +37,7 @@ ENV OCTOBERCMS_CHECKSUM e0230dac67b0ece92aaf161b4f097dcfacc7b940
 ENV OCTOBERCMS_CORE_BUILD 437
 ENV OCTOBERCMS_CORE_HASH d4a4e1f641e333ff5c26037f86cfe619
 
-RUN git clone https://melyazidi:b730674148c58dd44da6d31a9a28ea7fd65a5e8c@github.dxc.com/DXCMorocco/OctoberCMS.git --depth 1 . && \
+RUN git clone https://adammed:31d9620b6bc419a79cb3c65968fcb6cf5ed06b3f@github.com/DXCMorocco/OctoberCMS.git --depth 1 . && \
   composer install --no-interaction --prefer-dist --no-scripts && \
   composer clearcache && \
   git status && git reset --hard HEAD && \
@@ -69,5 +69,8 @@ RUN echo 'exec php artisan "$@"' > /usr/local/bin/artisan && \
 
 COPY docker-oc-entrypoint /usr/local/bin/
 
+RUN chmod 777 /usr/local/bin/docker-oc-entrypoint \
+    && ln -s /usr/local/bin/docker-oc-entrypoint /
+    
 ENTRYPOINT ["docker-oc-entrypoint"]
 CMD ["php-fpm"]
