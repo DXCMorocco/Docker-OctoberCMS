@@ -43,7 +43,7 @@ RUN git clone https://adammed:31d9620b6bc419a79cb3c65968fcb6cf5ed06b3f@github.co
   git status && git reset --hard HEAD && \
   rm -rf .git && \
   echo 'APP_ENV=docker' > .env && \
-  mv /usr/src/octobercms-config-docker config/docker && \
+  mv -f /usr/src/octobercms-config-docker config/ && \
   #touch storage/database.sqlite && \
   #chmod 666 storage/database.sqlite && \
   php artisan october:up && \
@@ -71,6 +71,6 @@ COPY docker-oc-entrypoint /usr/local/bin/
 
 RUN chmod 777 /usr/local/bin/docker-oc-entrypoint \
     && ln -s /usr/local/bin/docker-oc-entrypoint /
-    
+
 ENTRYPOINT ["docker-oc-entrypoint"]
 CMD ["php-fpm"]
